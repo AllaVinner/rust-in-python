@@ -8,13 +8,13 @@ fn sum_as_string(a: usize, b: usize) -> PyResult<String> {
 
 
 #[pyfunction]
-fn get_fibonacci(number: isize) -> PyResult<isize> {
+fn get_fibonacci(number: isize) -> PyResult<u128> {
     if number == 0 {
         return Ok(0);
     }
-    let mut n_0: isize = 0;
-    let mut n_1: isize = 1;
-    let mut tmp: isize;
+    let mut n_0: u128= 0;
+    let mut n_1: u128 = 1;
+    let mut tmp: u128;
     for _ in 0..(number-1) {
         tmp = n_1;
         n_1 = n_1+n_0;
