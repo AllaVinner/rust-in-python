@@ -1,5 +1,16 @@
 use pyo3::prelude::*;
 
+#[pyfunction]
+fn sum_loop(number: usize) -> PyResult<usize> {
+    let mut sum: usize = 0;
+    let moda: usize = 100;
+    let modb: usize = 99;
+    for i in 0..number {
+        sum = (sum + i % moda) % modb;
+    }
+    Ok(sum)
+}
+
 /// Formats the sum of two numbers as string.
 #[pyfunction]
 fn sum_as_string(a: usize, b: usize) -> PyResult<String> {
@@ -28,5 +39,6 @@ fn get_fibonacci(number: isize) -> PyResult<u128> {
 fn rust_mod(_py: Python, m: &PyModule) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(sum_as_string, m)?)?;
     m.add_function(wrap_pyfunction!(get_fibonacci, m)?)?;
+    m.add_function(wrap_pyfunction!(sum_loop, m)?)?;
     Ok(())
 }

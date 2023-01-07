@@ -1,4 +1,12 @@
 
+def sum_loop(number: int) -> int:
+    sum = 0
+    moda = 100
+    modb = 99
+    for i in range(number):
+        sum = (sum + i % moda) % modb
+    return sum
+
 def get_fibonacci(number: int) -> int:
     """Get the nth Fibonacci number."""
     if number == 1:
