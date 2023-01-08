@@ -1,4 +1,6 @@
+use ndarray::ArrayBase;
 use pyo3::prelude::*;
+use numpy::{IntoPyArray, PyArray1, PyArray2, PyArrayDyn, PyReadonlyArrayDyn};
 
 #[pyfunction]
 fn sum_loop(number: usize) -> PyResult<usize> {
@@ -33,6 +35,9 @@ fn get_fibonacci(number: isize) -> PyResult<u128> {
     }
     Ok(n_1)
 }
+
+#[pyfunction]
+
 
 /// A Python module implemented in Rust.
 #[pymodule]
