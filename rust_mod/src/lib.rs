@@ -36,9 +36,6 @@ fn get_fibonacci(number: isize) -> PyResult<u128> {
     Ok(n_1)
 }
 
-#[pyfunction]
-
-
 /// A Python module implemented in Rust.
 #[pymodule]
 fn rust_mod(_py: Python, m: &PyModule) -> PyResult<()> {
