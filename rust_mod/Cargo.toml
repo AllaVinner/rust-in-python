@@ -9,6 +9,6 @@ name = "rust_mod"
 crate-type = ["cdylib"]
 
 [dependencies]
-pyo3 = { version = "0.17.3", features = ["extension-module"] }
+pyo3 = { version = "0.18.1", features = ["extension-module"] }
 ndarray = "0.15.3"
-numpy = "0.17.2"
+numpy = "0.18.0"
